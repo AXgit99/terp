@@ -38,11 +38,13 @@ cd terp-core
 git checkout v4.2.2
 make install
 
-# config and init app
+**config and init app**
+```
 terpd config node tcp://localhost:${TERP_PORT}657
 terpd config keyring-backend os
 terpd config chain-id 90u-4
 terpd init "test" --chain-id 90u-4
+```
 
 # download genesis and addrbook
 wget -O $HOME/.terp/config/genesis.json https://server-4.itrocket.net/testnet/terp/genesis.json
