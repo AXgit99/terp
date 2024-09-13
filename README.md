@@ -46,9 +46,11 @@ terpd config chain-id 90u-4
 terpd init "test" --chain-id 90u-4
 ```
 
-# download genesis and addrbook
+**download genesis and addrbook**
+```
 wget -O $HOME/.terp/config/genesis.json https://server-4.itrocket.net/testnet/terp/genesis.json
 wget -O $HOME/.terp/config/addrbook.json  https://server-4.itrocket.net/testnet/terp/addrbook.json
+```
 
 # set seeds and peers
 SEEDS="a6ee57fb457f71530d165afd1901d0d62cd7d7e0@terp-testnet-seed.itrocket.net:13656"
