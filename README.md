@@ -52,12 +52,13 @@ wget -O $HOME/.terp/config/genesis.json https://server-4.itrocket.net/testnet/te
 wget -O $HOME/.terp/config/addrbook.json  https://server-4.itrocket.net/testnet/terp/addrbook.json
 ```
 
-# set seeds and peers
+**set seeds and peers**
+```
 SEEDS="a6ee57fb457f71530d165afd1901d0d62cd7d7e0@terp-testnet-seed.itrocket.net:13656"
 PEERS="51d48be3809bb8907c1ef5f747e53cdd0c9ded1b@terp-testnet-peer.itrocket.net:13656,2f0f98eb3965cc9949073b1f0e75a5e55be44ed2@65.109.28.177:21856"
 sed -i -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*seeds *=.*/seeds = \"$SEEDS\"/}" \
        -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" $HOME/.terp/config/config.toml
-
+```
 
 # set custom ports in app.toml
 sed -i.bak -e "s%:1317%:${TERP_PORT}317%g;
