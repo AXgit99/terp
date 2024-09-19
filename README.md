@@ -95,7 +95,8 @@ sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.terp/config/config.to
 sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $HOME/.terp/config/config.toml
 ```
 
-# create service file
+**create service file**
+```
 sudo tee /etc/systemd/system/terpd.service > /dev/null <<EOF
 [Unit]
 Description=Terp node
@@ -110,6 +111,7 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
+```
 
 # reset and download snapshot
 terpd tendermint unsafe-reset-all --home $HOME/.terp
