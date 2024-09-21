@@ -113,13 +113,15 @@ WantedBy=multi-user.target
 EOF
 ```
 
-# reset and download snapshot
+**reset and download snapshot**
+```
 terpd tendermint unsafe-reset-all --home $HOME/.terp
 if curl -s --head curl https://server-4.itrocket.net/testnet/terp/terp_2024-09-09_2510535_snap.tar.lz4 | head -n 1 | grep "200" > /dev/null; then
   curl https://server-4.itrocket.net/testnet/terp/terp_2024-09-09_2510535_snap.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.terp
     else
   echo "no snapshot founded"
 fi
+```
 
 # enable and start service
 sudo systemctl daemon-reload
