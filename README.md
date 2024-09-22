@@ -123,7 +123,8 @@ if curl -s --head curl https://server-4.itrocket.net/testnet/terp/terp_2024-09-0
 fi
 ```
 
-# enable and start service
+**enable and start service**
+```
 sudo systemctl daemon-reload
 sudo systemctl enable terpd
 sudo systemctl restart terpd && sudo journalctl -u terpd -f
@@ -131,6 +132,8 @@ Automatic Installation
 pruning: nothing: 100/0/10 | indexer: null
 
 source <(curl -s https://itrocket.net/api/testnet/terp/autoinstall/)
+```
+
 Create wallet
 # to create a new wallet, use the following command. don’t forget to save the mnemonic
 terpd keys add $WALLET
@@ -138,7 +141,7 @@ terpd keys add $WALLET
 # to restore exexuting wallet, use the following command
 terpd keys add $WALLET --recover
 
-# save wallet and validator address
+**save wallet and validator address**
 WALLET_ADDRESS=$(terpd keys show $WALLET -a)
 VALOPER_ADDRESS=$(terpd keys show $WALLET --bech val -a)
 echo "export WALLET_ADDRESS="$WALLET_ADDRESS >> $HOME/.bash_profile
