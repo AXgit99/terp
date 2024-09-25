@@ -139,8 +139,10 @@ Create wallet
 terpd keys add $WALLET
 ```
 
-# to restore exexuting wallet, use the following command
+**to restore exexuting wallet, use the following command**
+```
 terpd keys add $WALLET --recover
+```
 
 **save wallet and validator address**
 WALLET_ADDRESS=$(terpd keys show $WALLET -a)
