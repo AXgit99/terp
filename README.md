@@ -156,22 +156,13 @@ source $HOME/.bash_profile
 terpd status 2>&1 | jq 
 ```
 
-# before creating a validator, you need to fund your wallet and check balance
-terpd query bank balances $WALLET_ADDRESS 
+**before creating a validator, you need to fund your wallet and check balance**
+```
+terpd query bank balances $WALLET_ADDRESS
+```
+
 Create validator
-Moniker
-Identity
-Details
-I love blockchain ❤️
-Amount, uterpx
-1000000
-Commission rate
-0.1
-Commission max rate
-0.2
-Commission max change rate
-0.01
-Website
+
 terpd tx staking create-validator \
 --amount 1000000uterpx \
 --from $WALLET \
