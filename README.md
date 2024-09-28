@@ -161,8 +161,8 @@ terpd status 2>&1 | jq
 terpd query bank balances $WALLET_ADDRESS
 ```
 
-Create validator
-
+**Create validator**
+```
 terpd tx staking create-validator \
 --amount 1000000uterpx \
 --from $WALLET \
@@ -178,6 +178,8 @@ terpd tx staking create-validator \
 --chain-id 90u-4 \
 --fees 10000uthiolx \
 -y
+```
+
 Monitoring
 If you want to have set up a monitoring and alert system use our cosmos nodes monitoring guide with tenderduty
 
