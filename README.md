@@ -189,10 +189,12 @@ sudo ufw allow ${TERP_PORT}656/tcp
 sudo ufw enable
 ```
 
-Delete node
+**Delete node**
+```
 sudo systemctl stop terpd
 sudo systemctl disable terpd
 sudo rm -rf /etc/systemd/system/terpd.service
 sudo rm $(which terpd)
 sudo rm -rf $HOME/.terp
 sed -i "/TERP_/d" $HOME/.bash_profile
+```
